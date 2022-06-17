@@ -14,7 +14,21 @@ def compound():
     print("%s will be worth %s (after %s years at %s%% interest)" %(str(startValue), str(endValue), str(years), str(interest) ) )
 def income():
     print("The Income tax calculator is not yet functional, sorry!")
-
+    """
+    taxBrackets = [12570, 50270, 150000]
+    taxBracketRate = [0.20, 0.20, 0.05]
+    netIncome = 0
+    tax = 0.0
+    print("This is an Income tax calculator for the UK\n")
+    grossIncome = float(input("What is your gross income (income before taxes or other deductions)?: "))
+    for i in range (0, len(taxBrackets)):
+        if grossIncome > taxBrackets[i]:
+            taxable = grossIncome - taxBrackets[i]
+            tax = tax + float(taxable) * taxBracketRate
+            print(tax)
+    netIncome = grossIncome - tax
+    print("£%s gross income after Income tax is a net income of £%s (paying tax of£%s)" % (str(roun(grossIncome, 2)), str(round(netIncome, 2)), str(round(tax, 2))) )
+    """
 
 choice = input("What calculator do you want?\n1 - Basic Arithmetic\n2 - Compound Interest\n3 - Income Tax\n - ")
 calculators = {
