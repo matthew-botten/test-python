@@ -1,6 +1,5 @@
 import numpy
 from scipy import stats
-import matplotlib.pyplot as plt
 
 
 numbers = [1,2,3,4,5,3]
@@ -21,11 +20,11 @@ percentile = numpy.percentile(ages, 55)
 print("Percentile: "+str(percentile))
 
 
+import matplotlib
+import matplotlib.pyplot as plt
 #creating an array with 250 random floats between 0 and 5
 randomNumbers = numpy.random.uniform(0.0, 5.0, 250)
 print(randomNumbers)
-
-import matplotlib
 matplotlib.use('TkAgg')
 #opens a window with a histogram of the random numbers
 plt.hist(randomNumbers, 20)
