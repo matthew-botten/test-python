@@ -23,9 +23,9 @@ print("Percentile: "+str(percentile))
 import matplotlib
 import matplotlib.pyplot as plt
 #creating an array with 250 random floats between 0 and 5
-randomNumbers = numpy.random.uniform(0.0, 5.0, 1000)
+randomNumbers = numpy.random.uniform(0.0, 5.0, 100000)
 print(randomNumbers)
 matplotlib.use('TkAgg')
 #opens a window with a histogram of the random numbers
-plt.hist(randomNumbers, 20)
+plt.hist(randomNumbers, 100)
 plt.show()
