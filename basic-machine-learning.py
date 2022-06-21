@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 randomNumbers = numpy.random.uniform(0.0, 5.0, 100000)
 print(randomNumbers)
 matplotlib.use('TkAgg')
-#opens a window with a histogram of the random numbers
+#opens a window with a histogram of the random numbers the more random floats the flatter the histogram
 plt.hist(randomNumbers, 100)
 plt.show()
 
