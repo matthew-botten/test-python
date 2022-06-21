@@ -22,10 +22,16 @@ print("Percentile: "+str(percentile))
 
 import matplotlib
 import matplotlib.pyplot as plt
-#creating an array with 250 random floats between 0 and 5
+#creating an array with 100000 random floats between 0 and 5
 randomNumbers = numpy.random.uniform(0.0, 5.0, 100000)
 print(randomNumbers)
 matplotlib.use('TkAgg')
 #opens a window with a histogram of the random numbers
 plt.hist(randomNumbers, 100)
+plt.show()
+
+#creating an array with floats with a normal distribution; mean, deviation, no. of value
+normalDistribution = numpy.random.normal(5.0, 1.0, 100000)
+#uses matplotlib to plot a histogram, of the array previously defined, with 100 bras
+plt.hist(normalDistribution, 100)
 plt.show()
