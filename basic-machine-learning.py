@@ -35,3 +35,9 @@ normalDistribution = numpy.random.normal(5.0, 1.0, 100000)
 #uses matplotlib to plot a histogram, of the array previously defined, with 100 bras
 plt.hist(normalDistribution, 100)
 plt.show()
+
+# a scatter graph needs two arrays inputted of equal length
+x = numpy.random.normal(100.0, 25.0, 10000)
+y = numpy.random.normal(5.0, 3.0, 10000)
+plt.scatter(x, y)
+plt.show()
