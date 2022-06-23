@@ -51,6 +51,7 @@ y = [99,86,87,88,111,86,103,87,94,78,77,85,86]
 #calculate regression line
 slope, intercept, r, p, std_err = stats.linregress(x, y)
 #function that map's each x coordinate to a point on the regression line
+#this can be used to predict values if you have the x-coordinate (remembering regression in one way)
 def myfunc(x):
   return slope * x + intercept
 #runs each value through the function to create a new array
