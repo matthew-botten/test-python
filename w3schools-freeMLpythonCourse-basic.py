@@ -1,12 +1,10 @@
 import numpy
 from scipy import stats
 
-
 numbers = [1,2,3,4,5,3]
 print("mean: "+str(numpy.mean(numbers)) )
 print("mode: "+str(stats.mode(numbers)) )
 print("median: "+str(numpy.median(numbers)) )
-
 
 speed = [86,87,88,86,87,85,86]
 deviation = numpy.std(speed)
@@ -24,7 +22,6 @@ import matplotlib
 import matplotlib.pyplot as plt
 #creating an array with 100000 random floats between 0 and 5
 randomNumbers = numpy.random.uniform(0.0, 5.0, 100000)
-print(randomNumbers)
 matplotlib.use('TkAgg')
 #opens a window with a histogram of the random numbers the more random floats the flatter the histogram
 plt.hist(randomNumbers, 100)
@@ -61,3 +58,17 @@ plt.scatter(x, y)
 #plot a line
 plt.plot(x, mymodel)
 plt.show()
+
+
+#polynomial regression lines
+x = [1,2,3,5,6,7,8,9,10,12,13,14,15,16,18,19,21,22]
+y = [100,90,80,60,60,55,60,65,70,70,75,76,78,79,90,99,99,100]
+mymodel = numpy.poly1d(numpy.polyfit(x, y, 3))
+
+myline = numpy.linspace(1, 22, 100)
+plt.scatter(x, y)
+plt.plot(myline, mymodel(myline))
+plt.show()
+#polynomial r value (called r-squared)
+from sklearn.metrics import r2_score
+print(r2_score(y, mymodel(x)))
