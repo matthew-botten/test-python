@@ -72,3 +72,18 @@ plt.show()
 #polynomial r value (called r-squared)
 from sklearn.metrics import r2_score
 print(r2_score(y, mymodel(x)))
+
+
+#using more than one variable in regression lines
+import pandas
+df = pandas.read_csv("cars.csv")
+#independent variables list
+X = df[['Weight', 'Volume']]
+#dependent variable
+y = df['CO2']
+from sklearn import linear_model
+regr = linear_model.LinearRegression()
+regr.fit(X, y)
+#predict the CO2 emission of a car where the weight is 2300kg, and the volume is 1300cm3:
+predictedCO2 = regr.predict([[2300, 1300]])
+print(predictedCO2)
