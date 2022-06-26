@@ -39,3 +39,4 @@ while calculate.lower() == "y" or calculate.lower() == "yes":
     choice = input("What calculator do you want?\n1 - Basic Arithmetic\n2 - Compound Interest\n3 - Income Tax\n - ")
     calculators.get(choice, default)()
     calculate = input("\nIf you want to perform another calculation please enter ""yes"" or ""y"": ")
+print("Thank you for using this calculator!")
