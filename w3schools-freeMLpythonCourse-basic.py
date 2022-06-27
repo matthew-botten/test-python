@@ -34,8 +34,8 @@ plt.hist(normalDistribution, 100)
 plt.show()
 
 # a scatter graph needs two arrays inputted of equal length
-x = numpy.random.normal(100.0, 25.0, 10000)
-y = numpy.random.normal(5.0, 3.0, 10000)
+x = numpy.random.normal(100.0, 7.0, 10000)
+y = numpy.random.normal(5.0, 8.0, 10000)
 plt.scatter(x, y)
 plt.show()
 
@@ -83,7 +83,9 @@ X = df[['Weight', 'Volume']]
 y = df['CO2']
 from sklearn import linear_model
 regr = linear_model.LinearRegression()
-regr.fit(X, y)
+# .values removes the warning, I think it removes the header or names of the data used
+regr.fit(X.values, y.values)
 #predict the CO2 emission of a car where the weight is 2300kg, and the volume is 1300cm3:
 predictedCO2 = regr.predict([[2300, 1300]])
 print(predictedCO2)
+print(regr.coef_)
