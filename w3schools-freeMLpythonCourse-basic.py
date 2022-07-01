@@ -109,3 +109,12 @@ mymodel = numpy.poly1d(numpy.polyfit(train_x, train_y, 4))
 r2 = r2_score(train_y, mymodel(train_x))
 
 print(r2)
+
+
+
+import pandas
+from sklearn import tree
+import pydotplus
+from sklearn.tree import DecisionTreeClassifier
+import matplotlib.pyplot as plt
+import matplotlib.image as pltimg
