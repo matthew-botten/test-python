@@ -1,3 +1,4 @@
+"""
 import numpy
 from scipy import stats
 
@@ -110,7 +111,7 @@ r2 = r2_score(train_y, mymodel(train_x))
 
 print(r2)
 
-
+"""
 
 import pandas
 from sklearn import tree
@@ -118,3 +119,14 @@ import pydotplus
 from sklearn.tree import DecisionTreeClassifier
 import matplotlib.pyplot as plt
 import matplotlib.image as pltimg
+
+df = pandas.read_csv("shows.csv")
+print(df)
+d = {'UK': 0, 'USA': 1, 'N': 2}
+#map takes a dictionary and then replaces the values in a csv
+
+df['Nationality'] = df['Nationality'].map(d)
+d = {'YES': 1, 'NO': 0}
+df['Go'] = df['Go'].map(d)
+
+print(df)
