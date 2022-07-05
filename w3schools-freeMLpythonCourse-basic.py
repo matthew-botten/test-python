@@ -149,3 +149,12 @@ graph.write_png('mydecisiontree.png')
 img=pltimg.imread('mydecisiontree.png')
 imgplot = plt.imshow(img)
 plt.show()
+"""
+My understanding of the decision tree (with reference to the png):
+ the top value such as nationality or age in the tree
+  -this is the condition that splits the set of values apart, true goes left, false goes right
+ the second value (gini) is confusing and I'm not certain
+ the third value is the number of samples
+  -this is the number of values in the branch at this point in the tree
+ the fourth is value and I'm also not sure entirely how this works
+"""
