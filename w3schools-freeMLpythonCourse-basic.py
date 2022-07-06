@@ -153,8 +153,12 @@ plt.show()
 My understanding of the decision tree (with reference to the png):
  the top value such as nationality or age in the tree
   -this is the condition that splits the set of values apart, true goes left, false goes right
- the second value (gini) is confusing and I'm not certain
+ the second value (gini)
+  -this refers to the "quality" of the split, where the split is in regards to the range of values
+   in this case 6.5 is in the middle of 4 and 9 (the smallest and largest values)
+   so the gini is almost exactly 0.5 which means it would be a perfectly even split, not sure why it isn't
+   a gini of 0.0 would mean that the range is 0
  the third value is the number of samples
   -this is the number of values in the branch at this point in the tree
- the fourth is value and I'm also not sure entirely how this works
+ the fourth is value and I'm  not sure entirely how this works or what it means
 """
