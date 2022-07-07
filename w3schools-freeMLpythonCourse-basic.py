@@ -141,7 +141,7 @@ y = df['Go']
 #print(y)
 
 dtree = DecisionTreeClassifier()
-dtree = dtree.fit(X, y)
+dtree = dtree.fit(X.values, y)
 data = tree.export_graphviz(dtree, out_file=None, feature_names=features)
 graph = pydotplus.graph_from_dot_data(data)
 graph.write_png('mydecisiontree.png')
@@ -162,3 +162,7 @@ My understanding of the decision tree (with reference to the png):
   -this is the number of values in the branch at this point in the tree
  the fourth is value and I'm  not sure entirely how this works or what it means
 """
+
+#using the decision tree to predict whether you should or shouldn't go to a comedian
+#[Age, Experience, Rank, Nationality] not sure why the double brackets
+print( dtree.predict([[40, 10, 7, 1]]) )
