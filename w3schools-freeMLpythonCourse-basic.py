@@ -111,7 +111,7 @@ r2 = r2_score(train_y, mymodel(train_x))
 
 print(r2)
 
-"""
+
 
 import pandas
 from sklearn import tree
@@ -150,6 +150,7 @@ img=pltimg.imread('mydecisiontree.png')
 imgplot = plt.imshow(img)
 plt.show()
 """
+"""
 My understanding of the decision tree (with reference to the png):
  the top value such as nationality or age in the tree
   -this is the condition that splits the set of values apart, true goes left, false goes right
@@ -162,7 +163,50 @@ My understanding of the decision tree (with reference to the png):
   -this is the number of values in the branch at this point in the tree
  the fourth is value and I'm  not sure entirely how this works or what it means
 """
+"""
 
 #using the decision tree to predict whether you should or shouldn't go to a comedian
 #[Age, Experience, Rank, Nationality] not sure why the double brackets
 print( dtree.predict([[40, 10, 7, 1]]) )
+
+
+"""
+
+
+import matplotlib.pyplot as plt
+import numpy
+from sklearn import metrics
+
+actual = numpy.random.binomial(1,.9,size = 1000)
+predicted = numpy.random.binomial(1,.9,size = 1000)
+
+confusion_matrix = metrics.confusion_matrix(actual, predicted)
+
+cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix, display_labels = [False, True])
+
+cm_display.plot()
+plt.show()
+
+#accuracy = how often the model is correct
+#  (true positive + true negative)/Total predictions
+Accuracy = metrics.accuracy_score(actual, predicted)
+
+#precision = how many of the predicted positives are actually positive
+#  true positive/(true positive + false positive)
+Precision = metrics.precision_score(actual, predicted)
+
+#sensitivity = how many actual positives are predicted correctly
+#  true positive/(true positive + false negative)
+Sensitivity_recall = metrics.recall_score(actual, predicted)
+
+#specificity = sensitivity for negative results; how many actual negative results are predicted negative
+#  true negative/(true negative + false positive)
+Specificity = metrics.recall_score(actual, predicted, pos_label=0)
+
+#f-score = """F-score is the "harmonic mean" of precision and sensitivity. It considers both false positive and false negative cases and is good for imbalanced datasets.""
+# doesn't take into account true negatives
+#  2*( (Precision * Sensitivity)/(Precision + Sensitivity) )
+F1_score = metrics.f1_score(actual, predicted)
+
+
+print({"Accuracy":Accuracy,"Precision":Precision,"Sensitivity_recall":Sensitivity_recall,"Specificity":Specificity,"F1_score":F1_score})
