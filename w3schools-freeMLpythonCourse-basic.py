@@ -172,7 +172,7 @@ print( dtree.predict([[40, 10, 7, 1]]) )
 
 """
 
-
+"""
 import matplotlib.pyplot as plt
 import numpy
 from sklearn import metrics
@@ -203,10 +203,22 @@ Sensitivity_recall = metrics.recall_score(actual, predicted)
 #  true negative/(true negative + false positive)
 Specificity = metrics.recall_score(actual, predicted, pos_label=0)
 
-#f-score = """F-score is the "harmonic mean" of precision and sensitivity. It considers both false positive and false negative cases and is good for imbalanced datasets.""
+#f-score = ""F-score is the "harmonic mean" of precision and sensitivity. It considers both false positive and false negative cases and is good for imbalanced datasets.""
 # doesn't take into account true negatives
 #  2*( (Precision * Sensitivity)/(Precision + Sensitivity) )
 F1_score = metrics.f1_score(actual, predicted)
 
 
 print({"Accuracy":Accuracy,"Precision":Precision,"Sensitivity_recall":Sensitivity_recall,"Specificity":Specificity,"F1_score":F1_score})
+""" 
+
+
+#unsupervised learning beginnning
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = [4, 5, 10, 4, 3, 11, 14 , 6, 10, 12]
+y = [21, 19, 24, 17, 16, 25, 24, 22, 21, 21]
+
+plt.scatter(x, y)
+plt.show()
