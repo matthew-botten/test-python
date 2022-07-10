@@ -213,7 +213,7 @@ print({"Accuracy":Accuracy,"Precision":Precision,"Sensitivity_recall":Sensitivit
 """ 
 
 
-#unsupervised learning beginnning
+#unsupervised learning
 import numpy as np
 import matplotlib.pyplot as plt
 
