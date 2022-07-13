@@ -226,12 +226,15 @@ data = list(zip(x, y))
 #drawing a dendrogram?
 #the height on the y-axis in a dendrogram is the distance between two clusters of datapoints
 
-linkage_data = linkage(data, method='ward', metric='euclidean')
-dendrogram(linkage_data)
+#linkage_data = linkage(data, method='ward', metric='euclidean')
+#dendrogram(linkage_data)
 
-#hierarchical_cluster = AgglomerativeClustering(n_clusters=2, affinity='euclidean', linkage='ward')
-#labels = hierarchical_cluster.fit_predict(data)
 
-#plt.scatter(x, y, c=labels)
+#not quite sure what the commands do specifically but it colour codes the data splitting it into two groups
+#I assume from the dendrogram?
+hierarchical_cluster = AgglomerativeClustering(n_clusters=2, affinity='euclidean', linkage='ward')
+labels = hierarchical_cluster.fit_predict(data)
+
+plt.scatter(x, y, c=labels)
 
 plt.show()
