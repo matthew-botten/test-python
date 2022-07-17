@@ -258,7 +258,7 @@ log_odds = logr.coef_
 odds = numpy.exp(log_odds)
 
 print(odds)
-
+#temporary
 def logit2prob(logr, X):
   log_odds = logr.coef_ * X + logr.intercept_
   odds = numpy.exp(log_odds)
