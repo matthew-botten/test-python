@@ -252,12 +252,14 @@ logr = linear_model.LogisticRegression()
 logr.fit(X,y)
 
 #predict if tumor is cancerous where the size is 3.46mm:
-predicted = logr.predict(numpy.array([3.46]).reshape(-1,1))
+#as the array is only a single value it needs to be reshaped, not sure what that means though
+predicted = logr.predict(numpy.array(3.46).reshape(-1,1))
 print(predicted)
+
+#this tells us that when the tumor increases by 1 (mm) the odds of it being cancerous increase by 4x
 log_odds = logr.coef_ 
 odds = numpy.exp(log_odds)
-
-print(odds)
+print(odds)#4.035...
 
 def logit2prob(logr, X):
   log_odds = logr.coef_ * X + logr.intercept_
@@ -266,3 +268,5 @@ def logit2prob(logr, X):
   return(probability)
 
 print(logit2prob(logr, X))
+
+print(logr.predict(numpy.array(5.01).reshape(-1,1)))
