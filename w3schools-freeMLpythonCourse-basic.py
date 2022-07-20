@@ -269,4 +269,4 @@ def logit2prob(logr, X):
 
 print(logit2prob(logr, X))
 
-print(logr.predict(numpy.array(5.01).reshape(-1,1)))
+print(logr.predict(numpy.array(5.00).reshape(-1,1)))
