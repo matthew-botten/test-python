@@ -240,7 +240,7 @@ plt.scatter(x, y, c=labels)
 plt.show()
 """
 
-
+"""
 import numpy
 from sklearn import linear_model
 
@@ -270,3 +270,18 @@ def logit2prob(logr, X):
 print(logit2prob(logr, X))
 
 print(logr.predict(numpy.array(5.00).reshape(-1,1)))
+"""
+
+from sklearn import datasets
+from sklearn.linear_model import LogisticRegression
+
+iris = datasets.load_iris()
+
+X = iris['data']
+y = iris['target']
+
+logit = LogisticRegression(max_iter = 10000)
+
+print(logit.fit(X,y))
+
+print(logit.score(X,y))
